@@ -2,19 +2,12 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  base: "/portfolio/", // ✅ Set the base path for GitHub Pages
-  server: {
-    port: 8080,
-  },
-  plugins: [
-    react(),
-    mode === "development" && false, 
-  ].filter(Boolean),
+export default defineConfig({
+  base: "/portfolio/", // ✅ Change this to match your GitHub repo name
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-}));
+});
